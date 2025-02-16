@@ -28,7 +28,7 @@ const Update = () => {
     
 
 
-    axios.post(`https://server-api-el2y.vercel.app/api/users`,{image:`http://localhost:3000/file/${item1.name}`,
+    axios.post(`https://server-api-1d7r.vercel.app/api/users`,{image:`http://localhost:3000/file/${item1.name}`,
                                                   name:item2,
                                                   description:item3,
                                                   price:`$${item4}`,

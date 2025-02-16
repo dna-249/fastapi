@@ -25,12 +25,10 @@ const Update = () => {
   
   const handleRequest = () => {
     reader(item1)
-    axios.post(`http://localhost:3000/post`, form)
-         .then((res) => {console.log(res.data)})
-         .catch(err => console.log(err))
+    
 
 
-    axios.post(`http://localhost:5000/api/users`,{image:`http://localhost:3000/file/${item1.name}`,
+    axios.post(`https://server-api-el2y.vercel.app/api/users`,{image:`http://localhost:3000/file/${item1.name}`,
                                                   name:item2,
                                                   description:item3,
                                                   price:`$${item4}`,

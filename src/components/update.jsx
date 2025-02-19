@@ -25,7 +25,7 @@ const Update = () => {
   const handleRequest = () => {
    
     
-    axios.post("https://upload-api-yzgr.onrender.com",form).then(()=>alert("all is ok")).catch((err)=>alert(err))
+    axios.post("https://upload-api-yzgr.onrender.com/post",form).then(()=>alert("all is ok")).catch((err)=>alert(err))
 
     axios.post(`https://server-api-1d7r.vercel.app/api/users`,{image:`http://localhost:3000/file/${item1.name}`,
                                                   name:item2,

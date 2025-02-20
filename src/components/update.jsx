@@ -40,9 +40,9 @@ const Update = () => {
                                                   contact:`${item6}`,
                                                   whatsapp:item7
                                                })
-         .then((res) => {setIsUpload(false);console.log(res.data)})
+         .then((res) => {console.log(res.data)})
          .catch(err => console.log(err))
-         
+         setIsUpload(false);
 }
 useEffect(() => {
 

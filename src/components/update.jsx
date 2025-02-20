@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import {Link} from "react-router-dom"
 
 const Update = () => {
     const [item1,setItem1] = useState()
@@ -11,6 +12,8 @@ const Update = () => {
     const [item7,setItem7] = useState()
     const [item,setItem] = useState()
     const [image,setImage] = useState()
+    const [isUpload,setIsUpload] = useState(true)
+
     
       
     
@@ -25,9 +28,11 @@ const Update = () => {
   const handleRequest = () => {
    
     
-    axios.post("https://upload-api-yzgr.onrender.com/post",form).then((res)=> console.log(res)).catch((err)=>console.log(err))
+    axios.post("https://upload-api-yzgr.onrender.com/post",form)
+    .then((res)=> {setIsUpload(false);console.log(res)}).catch((err)=>console.log(err))
 
-    axios.post(`https://server-api-1d7r.vercel.app/api/users`,{image:`https://upload-api-yzgr.onrender.com/file/${item1.name}`,
+    axios.post(`https://server-api-1d7r.vercel.app/api/users`,
+     {image:`https://upload-api-yzgr.onrender.com/file/${item1.name}`,
                                                   name:item2,
                                                   description:item3,
                                                   price:`$${item4}`,
@@ -37,6 +42,7 @@ const Update = () => {
                                                })
          .then((res) => {console.log(res.data)})
          .catch(err => console.log(err))
+         
 }
 useEffect(() => {
 
@@ -45,7 +51,7 @@ useEffect(() => {
 
     
   return (
-    <div>
+    <div>{isUpload? (
         <div className="input"> 
           <div style={{height:"200px",width:"200px",backgroundColor: "rgba(0,0,0,0.5)"}}><img src={image}  width={200} alt='' /></div> 
            <h5 onChange={(e)=>name(e)}> upload Item </h5>
@@ -58,6 +64,17 @@ useEffect(() => {
        Whatsapp: <input required type='text' onChange={(e)=>setItem7(e.target.value)} />
        <div> <button  onClick={handleRequest}> UPLOAD </button> </div>
         </div>
+        ):(
+        <div className='auto success'>
+          <div className='green'>you have successfully updated</div>
+          <div style={{height:"100px",width:"100px", borderRadius:"5px",backgroundColor: "rgba(0,0,0,0.5)"}}><img src={image}  width={100} alt='' /></div> 
+            <div>Go to ...</div>
+           <div className='span'> 
+            <div className='button'><a to href="/" >HOME</a></div>
+            </div>
+          
+        </div>
+        )}
     </div>
   )
 }

@@ -1,13 +1,13 @@
 import React from 'react'
-import Items from './items'
+import Order from './order'
 
 const Item = ({data}) => {
   return (
     <div>Item
-        <div ><img src={data} className='img' alt='' /></div>
+        <div ><img src={data.image} className='img' alt='' /></div>
         Item Info
         <div>{data}</div>
-        <Items  data ={data}/>
+        <Order  data ={data}/>
     </div>
   )
 }

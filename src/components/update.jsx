@@ -70,7 +70,7 @@ useEffect(() => {
           <div style={{height:"100px",width:"100px", borderRadius:"5px",backgroundColor: "rgba(0,0,0,0.5)"}}><img src={image}  width={100} alt='' /></div> 
             <div>Go to ...</div>
            <div className='span'> 
-            <div className='button'><a to href="/" >HOME</a></div>
+            <div className='button'><Link to href="/" >HOME</Link></div>
             </div>
           
         </div>

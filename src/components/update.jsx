@@ -29,7 +29,7 @@ const Update = () => {
    
     
     axios.post("https://upload-api-yzgr.onrender.com/post",form)
-    .then((res)=> {setIsUpload(false);console.log(res)}).catch((err)=>console.log(err))
+    .then((res)=> {console.log(res)}).catch((err)=>console.log(err))
 
     axios.post(`https://server-api-1d7r.vercel.app/api/users`,
      {image:`https://upload-api-yzgr.onrender.com/file/${item1.name}`,
@@ -40,7 +40,7 @@ const Update = () => {
                                                   contact:`${item6}`,
                                                   whatsapp:item7
                                                })
-         .then((res) => {console.log(res.data)})
+         .then((res) => {setIsUpload(false);console.log(res.data)})
          .catch(err => console.log(err))
          
 }

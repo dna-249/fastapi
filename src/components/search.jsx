@@ -11,12 +11,12 @@ const Search=({data})=> {
         {show? (
           <div>
            <img src="/search.png" alt =""/>
-        <input type='text' onChange={(e)=>setSearch(e.target.value)} />
+           <input type='text' onChange={(e)=>setSearch(e.target.value)} />
 
             {data
             .filter((item) => {return search.toLowerCase() === ""? item:item.name.toLowerCase().includes(search)})
             .map((item,index)=> <div key={index} onClick={()=>setShow(()=>false)}>
-                {item.name}
+                {item.id}
             <img src={item.image}alt="" width={300} onClick={()=>setSelect(item)} />
             </div>)}
           </div>

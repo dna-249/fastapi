@@ -8,7 +8,7 @@ const Header = () => {
         <div className='icons'>
         <div><Link to={'/'}>Home</Link> </div>
           <div><Link to={'/search'}>search</Link> </div>
-          <div><Link to={'/update'}>update</Link> </div>
+          <div><Link to={'/menu'}>update</Link> </div>
           <div>service</div>
         </div>
     </div>

@@ -6,6 +6,9 @@ import Header from './components/header'
 import Search from './components/search'
 import Update from './components/update'
 import {Route,Routes} from "react-router-dom"
+import Menu from './components/menu'
+import Delete from './components/delete'
+import UpdateItem from './components/updateitem'
 
 const App = () => {
   const [data,setData] = useState([''])
@@ -25,6 +28,10 @@ useEffect(()=>{
     <Route path='/' element={<Home data={data}/>} />
     <Route path='/search' element={<Search data={data} />} />
     <Route path='/update' element={<Update />} />
+    <Route path='/updateitem' element={<UpdateItem />} />
+    <Route path='/menu' element={<Menu />} />
+    <Route path='/delete' element={<Delete />} />
+
     </Routes>
     </>
   )

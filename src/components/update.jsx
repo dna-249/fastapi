@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import {Link} from "react-router-dom"
 
@@ -10,12 +10,10 @@ const Update = () => {
     const [item5,setItem5] = useState()
     const [item6,setItem6] = useState()
     const [item7,setItem7] = useState()
-    const [item,setItem] = useState()
+    const [item,setItem] =   useState()
     const [image,setImage] = useState()
     const [isUpload,setIsUpload] = useState(true)
 
-    
-      
     
     const form = new FormData()
     form.append("file",item1)
@@ -44,9 +42,6 @@ const Update = () => {
          .catch(err => console.log(err))
          setIsUpload(false);
 }
-useEffect(() => {
-
-}, [item])
 
 
     
@@ -62,7 +57,7 @@ useEffect(() => {
        Category: <input required type='text' onChange={(e)=>setItem5(e.target.value)} /> <br/>
        Contact: <input required type='number' onChange={(e)=>setItem6(e.target.value)} /> <br/>
        Whatsapp: <input required type='text' onChange={(e)=>setItem7(e.target.value)} />
-       <div> <button  onClick={handleRequest}> UPLOAD </button> </div>
+       <div><button  onClick={handleRequest}> UPLOAD </button></div>
         </div>
         ):(
         <div className='auto success'>

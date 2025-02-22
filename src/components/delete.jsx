@@ -18,7 +18,7 @@ const Delete =() => {
   },[])
 
   const handleDelete = (params) => {
-    axios.post(`https://server-api-1d7r.vercel.app/api/users/${select._id}` )
+    axios.delete(`https://server-api-1d7r.vercel.app/api/users/${select._id}` )
             .then((res) => {console.log(res.data)})
             .catch(err => console.log(err))
     

@@ -40,7 +40,7 @@ const UpdateItem = () => {
 
   const handleUpdateItem = (params) => {
     axios.put(`https://server-api-1d7r.vercel.app/api/users/${select._id}`,
-        {image:`https://upload-api-yzgr.onrender.com/file/${item1.name}`,
+        {image:`https://upload-api-yzgr.onrender.com}`,
                                                      name:item2,
                                                      description:item3,
                                                      price:`$${item4}`,

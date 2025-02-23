@@ -27,7 +27,7 @@ const Update = () => {
    
     setIsUpload(false);
     axios.post("https://upload-api-yzgr.onrender.com/post",form)
-    .then((res)=> {alert("successfully uploaded")}).catch((err)=>console.log(err))
+    .then((res)=> {alert("successfully uploaded 01")}).catch((err)=>console.log(err))
 
     axios.post(`https://server-api-1d7r.vercel.app/api/users`,
      {image:`https://upload-api-yzgr.onrender.com/file/${item1.name}`,
@@ -38,7 +38,7 @@ const Update = () => {
                                                   contact:`${item6}`,
                                                   whatsapp:item7
                                                })
-         .then((res) => {alert("successfully uploaded")})
+         .then((res) => {alert("successfully uploaded 02")})
          .catch(err => console.log(err))
         
         

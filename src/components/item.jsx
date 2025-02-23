@@ -6,7 +6,7 @@ const Item = ({data}) => {
     <div>Item
         <div ><img src={data.image} className='img' alt='' /></div>
         Item Info
-        <div>{data}</div>
+        <div>{data.name}</div>
         <Order  data ={data}/>
     </div>
   )

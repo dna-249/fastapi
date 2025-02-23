@@ -19,7 +19,7 @@ const Delete =() => {
 
   const handleDelete = (params) => {
     axios.delete(`https://server-api-1d7r.vercel.app/api/users/${select._id}` )
-            .then((res) => {console.log(res.data)})
+            .then((res) => {alert(select._id + "has been deleted successfully");console.log(res.data)})
             .catch(err => console.log(err))
     
   }

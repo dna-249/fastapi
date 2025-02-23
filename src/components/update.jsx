@@ -1,7 +1,6 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import {Link} from "react-router-dom"
-
 
 const Update = () => {
     const [item1,setItem1] = useState()
@@ -11,8 +10,7 @@ const Update = () => {
     const [item5,setItem5] = useState()
     const [item6,setItem6] = useState()
     const [item7,setItem7] = useState()
-    const [sent,setSent] =   useState()
-    const [respond,setRespond] =   useState()
+    const [item,setItem] =   useState()
     const [image,setImage] = useState()
     const [isUpload,setIsUpload] = useState(true)
 
@@ -25,13 +23,14 @@ const Update = () => {
   }
   
   
-  useEffect(()=>{
-    
+  const handleRequest = () => {
+   
+    setIsUpload(false);
     axios.post("https://upload-api-yzgr.onrender.com/post",form)
-    .then((res)=> {setRespond(res);console.log(res)}).catch((err)=>console.log(err))
+    .then((res)=> {console.log(res)}).catch((err)=>console.log(err))
 
     axios.post(`https://server-api-1d7r.vercel.app/api/users`,
-     {image:`https://upload-api-yzgr.onrender.com/file/${item1}`,
+     {image:`https://upload-api-yzgr.onrender.com/file/${item1.name}`,
                                                   name:item2,
                                                   description:item3,
                                                   price:`$${item4}`,
@@ -43,12 +42,9 @@ const Update = () => {
          .catch(err => console.log(err))
         
         
-
+}
 
  
-   
-   
-  },[sent,respond])
     
   return (
     <div>{isUpload? (
@@ -62,7 +58,7 @@ const Update = () => {
        Category: <input required type='text' onChange={(e)=>setItem5(e.target.value)} /> <br/>
        Contact: <input required type='number' onChange={(e)=>setItem6(e.target.value)} /> <br/>
        Whatsapp: <input required type='text' onChange={(e)=>setItem7(e.target.value)} />
-       <div><button  onClick={()=>setSent("sent")}> UPLOAD </button></div>
+       <div><button  onClick={handleRequest}> UPLOAD </button></div>
         </div>
         ):(
         <div className='auto success'>

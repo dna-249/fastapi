@@ -1,7 +1,7 @@
 
 
 body{
-  background-color:#f4f2f2a5;
+background-image: url("/msyshop.jpg");
 }
 .icons{
   display:grid;
@@ -122,6 +122,13 @@ h3{
  }
  a{
   text-decoration: none;
+ }
+ .white{
+  background-color:white;
+  border-radius:5px;
+  border: 2px 2px solid green;
+  height:200px;
+  width:50%;
  }
 
 

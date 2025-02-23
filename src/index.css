@@ -133,7 +133,7 @@ h3{
   border-radius:5px;
   border: 2px 2px solid green;
   height:fit-content;
-  width:50%;
+  width:80%;
   padding: 10px;
  }
  .white div{
@@ -142,7 +142,7 @@ h3{
   border: none;
   border-radius: 5px;
   background-color: aliceblue;
-  color: rgb(10, 42, 130);
+  color: rgb(3, 17, 53);
   margin: 2px;
   width: 150px;
   text-align: center;

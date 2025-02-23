@@ -26,7 +26,7 @@ const Update = () => {
   
   const handleRequest = () => {
    
-    
+    setIsUpload(false);
     axios.post("https://upload-api-yzgr.onrender.com/post",form)
     .then((res)=> {console.log(res)}).catch((err)=>console.log(err))
 
@@ -41,7 +41,7 @@ const Update = () => {
                                                })
          .then((res) => {console.log(res.data);alert("successfully uploaded")})
          .catch(err => console.log(err))
-         setIsUpload(false);
+        
         
 }
 

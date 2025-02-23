@@ -26,7 +26,7 @@ const Update = () => {
   
   
   useEffect(()=>{
-    setIsUpload(false);
+    
     axios.post("https://upload-api-yzgr.onrender.com/post",form)
     .then((res)=> {setRespond(res);console.log(res)}).catch((err)=>console.log(err))
 

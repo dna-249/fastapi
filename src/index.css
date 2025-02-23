@@ -2,6 +2,11 @@
 
 body{
 background-image: url("/msyshop.jpg");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-clip: content-box;
+background-position: center;
+background-size: cover;
 }
 .icons{
   display:grid;

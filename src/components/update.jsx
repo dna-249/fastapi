@@ -39,8 +39,9 @@ const Update = () => {
                                                   contact:`${item6}`,
                                                   whatsapp:item7
                                                })
-         .then((res) => { setIsUpload(false);console.log(res.data);alert("successfully uploaded")})
+         .then((res) => {console.log(res.data);alert("successfully uploaded")})
          .catch(err => console.log(err))
+         setIsUpload(false);
         
 }
 

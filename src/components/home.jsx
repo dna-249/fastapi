@@ -14,7 +14,7 @@ const Home = ({data})=>{
             {data
             .map((item,index)=> <div key={index} onClick={()=>setShow(()=>false)}>
 
-           <div> <img className='img2' src={item.image}alt=""  onClick={()=>setSelect(item.image)} /></div>
+           <div> <img className='img2' src={item.image}alt=""  onClick={()=>setSelect(item)} /></div>
             </div>)}
           </div>
         ):(<div className='auto'><Item data={select}  /></div> )}

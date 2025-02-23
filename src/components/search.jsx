@@ -17,7 +17,8 @@ const Search=({data})=> {
             .filter((item) => {return search.toLowerCase() === ""? item:item.name.toLowerCase().includes(search)})
             .map((item,index)=> <div key={index} onClick={()=>setShow(()=>false)}>
                 {item._id}
-            <img src={item.image} alt="" width={300} onClick={()=>setSelect(item)} />
+                <div onClick={()=>setSelect(item)} >
+            <img src={item.image} alt="" width={300}  /></div>
             </div>)}
           </div>
         ):(<div className="auto" ><Item data={select}  /></div> )}

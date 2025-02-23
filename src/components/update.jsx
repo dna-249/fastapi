@@ -13,6 +13,7 @@ const Update = () => {
     const [item,setItem] =   useState()
     const [image,setImage] = useState()
     const [isUpload,setIsUpload] = useState(true)
+    const [uploading,setUploading] = useState(false)
 
     
     const form = new FormData()
@@ -26,8 +27,9 @@ const Update = () => {
   const handleRequest = () => {
    
     setIsUpload(false);
+
     axios.post("https://upload-api-yzgr.onrender.com/post",form)
-    .then((res)=> {alert("successfully uploaded 01")}).catch((err)=>console.log(err))
+    .then((res)=> {setUploading(true);alert("successfully uploaded 01")}).catch((err)=>{setUploading(true);console.log(err)})
 
     axios.post(`https://server-api-1d7r.vercel.app/api/users`,
      {image:`https://upload-api-yzgr.onrender.com/file/${item1.name}`,
@@ -38,8 +40,9 @@ const Update = () => {
                                                   contact:`${item6}`,
                                                   whatsapp:item7
                                                })
-         .then((res) => {alert("successfully uploaded 02")})
-         .catch(err => console.log(err))
+         .then((res) => {setUploading(true);alert("successfully uploaded 02")})
+         .catch(err => {console.log(err)})
+         
         
         
 }
@@ -60,15 +63,16 @@ const Update = () => {
        Whatsapp: <input required type='text' onChange={(e)=>setItem7(e.target.value)} />
        <div><button  onClick={handleRequest}> UPLOAD </button></div>
         </div>
-        ):(
+        ):(<div>{uploading?(
         <div className='auto success'>
           <div className='green'>you have successfully updated</div>
           <div style={{height:"100px",width:"100px", borderRadius:"5px",backgroundColor: "rgba(0,0,0,0.5)"}}><img src={image}  width={100} alt='' /></div> 
             <div>Go to ...</div>
-           <div className='span'> 
-            <div className='button'><Link to="/">HOME</Link></div>
-            </div>
-          
+             <div className='span'> 
+          <div className='button'><Link to="/">HOME</Link></div>
+          </div>
+        </div>):(
+         <div className='auto upload'> <div><h4>Please wait while uploading... </h4></div></div>)}
         </div>
         )}
     </div>

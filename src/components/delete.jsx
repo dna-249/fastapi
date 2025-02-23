@@ -9,7 +9,7 @@ const Delete =() => {
     const [data,setData] = useState([''])
     const handleRequest = () => {
       axios.get(`https://server-api-1d7r.vercel.app/api/users`)
-           .then((res) => {console.log(res.data);setData(res.data)})
+           .then((res) => {alert(res.data);setData(res.data)})
            .catch(err => console.log(err))
   }
   

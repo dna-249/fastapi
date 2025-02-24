@@ -40,7 +40,7 @@ const Update = () => {
                                                   contact:`${item6}`,
                                                   whatsapp:item7
                                                })
-         .then((res) => {setUploading(true);alert("successfully uploaded 02")})
+         .then((res) => {alert("successfully uploaded 02")})
          .catch(err => {console.log(err)})
          
         
@@ -52,7 +52,7 @@ const Update = () => {
   return (
     <div>{isUpload? (
         <div className="input"> 
-          <div style={{height:"200px",width:"200px",backgroundColor: "rgba(0,0,0,0.5)"}}><img src={image}  width={200} alt='' /></div> 
+          <div style={{height:"200px",width:"200px",backgroundColor: "rgba(188, 175, 175, 0.5)"}}><img src={image} height={200} width={200} alt='' /></div> 
            <h5 onChange={(e)=>name(e)}> upload Item </h5>
        Image: <input required type='file'  onChange={(e)=>name(e)} /> <br/>
        Name: <input required type='text'    onChange={(e)=>setItem2(e.target.value)} /> <br/>
@@ -66,7 +66,8 @@ const Update = () => {
         ):(<div>{uploading?(
         <div className='auto success'>
           <div className='green'>you have successfully updated</div>
-          <div style={{height:"100px",width:"100px", borderRadius:"5px",backgroundColor: "rgba(0,0,0,0.5)"}}><img src={image}  width={100} alt='' /></div> 
+          <div style={{height:"100px",width:"100px", borderRadius:"5px",backgroundColor: "rgba(113, 103, 103, 0.28)"}}>
+            <img src={image} height={200}  width={100} alt='' /></div> 
             <div>Go to ...</div>
              <div className='span'> 
           <div className='button'><Link to="/">HOME</Link></div>

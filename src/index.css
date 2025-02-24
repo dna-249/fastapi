@@ -169,8 +169,9 @@ h3{
   z-index: 10;
   backdrop-filter:blur(5px) ;
   position: absolute;
-  display: flex;
+  display:grid;
   top: 0;
+  align-content: center;
   justify-items: center;
   align-items: center;
   color: green;
@@ -178,8 +179,20 @@ h3{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
  }
+ @keyframes loading {
 
+  0%{
+    transform:rotate(0deg);
+  }
+  100%{
+    transform:rotate(360deg);
+  }
+ }
 
+.animation{
+  animation: loading 1.0s;
+  animation-iteration-count: infinite;
+}
 
 
 

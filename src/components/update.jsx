@@ -12,7 +12,7 @@ const Update = () => {
     const [item7,setItem7] = useState()
     const [item,setItem] =   useState()
     const [image,setImage] = useState()
-    const [isUpload,setIsUpload] = useState(true)
+    const [isUpload,setIsUpload] = useState(false)
     const [uploading,setUploading] = useState(false)
 
     
@@ -72,7 +72,11 @@ const Update = () => {
           <div className='button'><Link to="/">HOME</Link></div>
           </div>
         </div>):(
-         <div className='auto upload'> <div><h4>Please wait while uploading... </h4></div></div>)}
+         <div className='auto upload'> 
+               <div className='auto'><h4>Please wait while uploading... </h4>
+                <img className='animation' src={"/loading.png"} width={50} height={50}/>
+              </div>
+        </div>)}
         </div>
         )}
     </div>

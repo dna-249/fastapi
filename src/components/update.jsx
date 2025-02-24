@@ -12,7 +12,7 @@ const Update = () => {
     const [item7,setItem7] = useState()
     const [item,setItem] =   useState()
     const [image,setImage] = useState()
-    const [isUpload,setIsUpload] = useState(false)
+    const [isUpload,setIsUpload] = useState(true)
     const [uploading,setUploading] = useState(false)
 
     

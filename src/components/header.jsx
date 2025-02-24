@@ -7,9 +7,9 @@ const Header = () => {
       <h3>myShop</h3>
         <div className='icons'>
         <div><Link to={'/'}>Home</Link> </div>
-          <div><Link to={'/search'}>search</Link> </div>
-          <div><Link to={'/menu'}>update</Link> </div>
-          <div>service</div>
+          <div><Link to={'/search'}>Search</Link> </div>
+          <div><Link to={'/menu'}>Update</Link> </div>
+          <div><a href='/'>Refresh</a></div>
         </div>
     </div>
   )

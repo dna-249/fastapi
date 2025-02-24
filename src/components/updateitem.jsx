@@ -1,6 +1,7 @@
 
 import React, { useState,useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 
 const UpdateItem = () => {
@@ -19,7 +20,8 @@ const UpdateItem = () => {
     const [item,setItem] =   useState()
     const [image,setImage] = useState()
     const [isUpload,setIsUpload] = useState(true)
-
+    const [uploading,setUploading] = useState(false)
+    
 
     const form = new FormData()
     form.append("file",item1)
@@ -40,6 +42,7 @@ const UpdateItem = () => {
   },[])
 
   const handleUpdateItem = (params) => {
+    setIsUpload(false)
     axios.put(`https://server-api-1d7r.vercel.app/api/users/${select._id}`,
         {image:`https://upload-api-yzgr.onrender.com/file/${item1?.name}}`,
                                                      name:item2,
@@ -49,9 +52,9 @@ const UpdateItem = () => {
                                                      contact:`${item6}`,
                                                      whatsapp:item7
                                                   })
-            .then((res) => {alert("updated");console.log(res.data)})
+            .then((res) => {setUploading(true);alert("updated");console.log(res.data)})
             .catch(err => console.log(err))
-            setIsUpload(false);
+            
    
    
   }
@@ -92,15 +95,22 @@ const UpdateItem = () => {
        </div>
         </div>
         ):(
-        <div className='auto success'>
-          <div className='green'>you have successfully updated</div>
-          <div style={{height:"100px",width:"100px", borderRadius:"5px",backgroundColor: "rgba(0,0,0,0.5)"}}><img src={image}  width={100} alt='' /></div> 
-            <div>Go to ...</div>
-           <div className='span'> 
-            <div className='button'>home</div>
+          <div>{uploading?(
+            <div className='auto success'>
+              <div className='green'>you have successfully updated</div>
+              <div style={{height:"100px",width:"100px", borderRadius:"5px",backgroundColor: "rgba(113, 103, 103, 0.28)"}}>
+                <img src={image} height={200}  width={100} alt='' /></div> 
+                <div>Go to ...</div>
+                 <div className='span'> 
+              <div className='button'><Link to="/">HOME</Link></div>
+              </div>
+            </div>):(
+             <div className='auto upload'> 
+                   <div className='auto'><h4>Please wait while Updating... </h4>
+                    <img className='animation' src={"/loading.png"} width={50} height={50}/>
+                  </div>
+            </div>)}
             </div>
-          
-        </div>
         )}
     </div>
     )}

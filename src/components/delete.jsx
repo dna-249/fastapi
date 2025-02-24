@@ -62,7 +62,7 @@ const Delete =() => {
                 <div className='auto success'>
                   <div className='green'>you have successfully updated</div>
                   <div style={{height:"100px",width:"100px", borderRadius:"5px",backgroundColor: "rgba(113, 103, 103, 0.28)"}}>
-                    <img src={image} height={200}  width={100} alt='' /></div> 
+                    <img src={select.image} height={200}  width={100} alt='' /></div> 
                     <div>Go to ...</div>
                      <div className='span'> 
                   <div className='button'><Link to="/">HOME</Link></div>

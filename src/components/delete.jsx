@@ -9,6 +9,7 @@ const Delete =() => {
     const [select,setSelect] = useState(true)
     const [data,setData] = useState([''])
     const [isUpload,setIsUpload] = useState(true)
+    const [isError,setIsError] = useState(true)
     const [uploading,setUploading] = useState(false)
     
 
@@ -29,7 +30,7 @@ const Delete =() => {
     setIsUpload(false)
     axios.delete(`https://server-api-1d7r.vercel.app/api/users/${select._id}` )
             .then((res) => {setUploading(true);alert(select._id + "has been deleted successfully");console.log(res.data)})
-            .catch(err => console.log(err))
+            .catch(err =>{setIsError(false);console.log(err)})
     
   }
   
@@ -67,14 +68,21 @@ const Delete =() => {
                      <div className='span'> 
                   <div className='button'><Link to="/">HOME</Link></div>
                   </div>
-                </div>):(
+                </div>):isError?(
                  <div className='auto upload'> 
                        <div className='auto'><h4>Please wait while Updating... </h4>
                         <img className='animation' src={"/loading.png"} width={50} height={50}/>
                       </div>
+                </div>):(<div className='auto success'>
+                  <div className='green'>not uploaded</div>
+                  <div style={{height:"100px",width:"100px", borderRadius:"5px",backgroundColor: "rgba(113, 103, 103, 0.28)"}}>
+                    <img src={select.image} height={200}  width={100} alt='' /></div> 
+                    <div>Go to ...</div>
+                     <div className='span'> 
+                  <div className='button'><Link to="/">HOME</Link></div>
+                  </div>
                 </div>)}
                 </div>
-
               )}
 
         </div> )}

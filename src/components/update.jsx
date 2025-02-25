@@ -13,6 +13,7 @@ const Update = () => {
     const [item,setItem] =   useState()
     const [image,setImage] = useState()
     const [isUpload,setIsUpload] = useState(true)
+    const [isError,setIsError] = useState(true)
     const [uploading,setUploading] = useState(false)
 
     
@@ -29,7 +30,7 @@ const Update = () => {
     setIsUpload(false);
 
     axios.post("https://upload-api-yzgr.onrender.com/post",form)
-    .then((res)=> {setUploading(true);alert("successfully uploaded 01")}).catch((err)=>{setUploading(true);console.log(err)})
+    .then((res)=> {setUploading(true);alert("successfully uploaded 01")}).catch((err)=>{setIsError(false);console.log(err)})
 
     axios.post(`https://server-api-1d7r.vercel.app/api/users`,
      {image:`https://upload-api-yzgr.onrender.com/file/${item1.name}`,
@@ -41,7 +42,7 @@ const Update = () => {
                                                   whatsapp:item7
                                                })
          .then((res) => {alert("successfully uploaded 02")})
-         .catch(err => {console.log(err)})
+         .catch(err => {setIsError(false);console.log(err)})
          
         
         
@@ -72,12 +73,20 @@ const Update = () => {
              <div className='span'> 
           <div className='button'><Link to="/">HOME</Link></div>
           </div>
-        </div>):(
-         <div className='auto upload'> 
-               <div className='auto'><h4>Please wait while uploading... </h4>
-                <img className='animation' src={"/loading.png"} width={50} height={50}/>
-              </div>
-        </div>)}
+        </div>):isError?(
+                         <div className='auto upload'> 
+                               <div className='auto'><h4>Please wait while Updating... </h4>
+                                <img className='animation' src={"/loading.png"} width={50} height={50}/>
+                              </div>
+                        </div>):(<div className='auto success'>
+                          <div className='green'>not uploaded</div>
+                          <div style={{height:"100px",width:"100px", borderRadius:"5px",backgroundColor: "rgba(113, 103, 103, 0.28)"}}>
+                            <img src={select.image} height={200}  width={100} alt='' /></div> 
+                            <div>Go to ...</div>
+                             <div className='span'> 
+                          <div className='button'><Link to="/">HOME</Link></div>
+                          </div>
+                        </div>)}
         </div>
         )}
     </div>

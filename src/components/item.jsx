@@ -4,7 +4,7 @@ import Order from './order'
 const Item = ({data}) => {
   return (
     <div>Item
-        <div ><img src={data.image} className='img' alt='' /></div>
+        <div ><img src={data.image} className='img' width={200} height={250} alt='' /></div>
         Item Info
         <div>{data.name}</div>
         <Order  data ={data}/>

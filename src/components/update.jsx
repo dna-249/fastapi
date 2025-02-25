@@ -32,7 +32,7 @@ const Update = () => {
     axios.post("https://upload-api-yzgr.onrender.com/post",form)
     .then((res)=> {setUploading(true);alert("successfully uploaded 01")}).catch((err)=>{setIsError(false);console.log(err)})
 
-    axios.post(`https://server-api-1d7r.vercel.app/api/users`,
+    axios.post("https://server-api-1d7r.vercel.app/api/users",
      {image:`https://upload-api-yzgr.onrender.com/file/${item1.name}`,
                                                   name:item2,
                                                   description:item3,
@@ -64,7 +64,9 @@ const Update = () => {
        Whatsapp: <input required type='text' onChange={(e)=>setItem7(e.target.value)} />
        <div><button  onClick={handleRequest}> UPLOAD </button></div>
         </div>
-        ):(<div>{uploading?(
+        ):( 
+        
+        <div>{uploading?(
         <div className='auto success'>
           <div className='green'>you have successfully updated</div>
           <div style={{height:"100px",width:"100px", borderRadius:"5px",backgroundColor: "rgba(113, 103, 103, 0.28)"}}>
@@ -78,7 +80,9 @@ const Update = () => {
                                <div className='auto'><h4>Please wait while Updating... </h4>
                                 <img className='animation' src={"/loading.png"} width={50} height={50}/>
                               </div>
-                        </div>):(<div className='auto success'>
+                        </div>):(
+                        
+                            <div className='auto success'>
                           <div className='green'>not uploaded</div>
                           <div style={{height:"100px",width:"100px", borderRadius:"5px",backgroundColor: "rgba(113, 103, 103, 0.28)"}}>
                             <img src={select.image} height={200}  width={100} alt='' /></div> 

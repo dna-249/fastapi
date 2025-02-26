@@ -55,6 +55,10 @@ h3{
   border-radius: 5px;
   margin:auto
 }
+.homegrid{
+  display: grid;
+  grid-template-columns: auto auto;
+}
 .input input{
   height:20px;
   border-radius:5px;

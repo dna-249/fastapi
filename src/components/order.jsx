@@ -5,10 +5,12 @@ const Order=({data})=>{
     <>
     <div className='auto'>
     <div><img src={data.image} width={200} height={250} alt=''/></div>
-    <div>name:{data.name}</div>
-    <div>{data.price}</div>
-    <div>{data.contact}</div>
-    <div>{data.whatsapp}</div>
+    Item Info
+        <div>Name:{data.name}</div> 
+        <div>Category:{data.category}</div>
+        <div>Price:{data.price}</div>
+        <div>Contact{data.contact}</div>
+        <div>Whatsapp{data.whatsapp}</div>
     </div>
     </> 
   )

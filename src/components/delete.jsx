@@ -51,11 +51,13 @@ const Delete =() => {
             </div>)}
           </div>
         ):(<div>{isUpload?(<div className="auto" >
-                <div><img src={select.image} /></div>
+                <div><img src={select.image}  height={200}  width={100} /></div>
                 <div>{select.id}</div>
                 <div>{select.name}</div>
                 <div>{select.price}</div>
                 <div>{select.category}</div>
+                <div>{select.contact}</div>
+                <div>{select.whatsapp}</div>
                 <div>
                  <button onClick={()=>handleDelete()}>Delete Id</button>
                 </div></div>

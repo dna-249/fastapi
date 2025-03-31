@@ -21,7 +21,9 @@ const Update = () => {
     form.append("file",item1)
   const name = (e) => {
     setItem1(e.target.files[0])
+    
     setImage(URL.createObjectURL(e.target.files[0]))
+    console.log(image)
   }
   
   
@@ -29,11 +31,11 @@ const Update = () => {
    
     setIsUpload(false);
 
-    axios.post("https://upload-api-yzgr.onrender.com/post",form)
+    axios.post("https://uploadapi-production.up.railway.app/post",form)
     .then((res)=> {setUploading(true);alert("successfully uploaded 01")}).catch((err)=>{setIsError(false);console.log(err)})
 
     axios.post("https://server-api-1d7r.vercel.app/api/users",
-     {image:`https://upload-api-yzgr.onrender.com/file/${item1.name}`,
+     {image:`https://uploadapi-production.up.railway.app/file/${item1.name}`,
                                                   name:item2,
                                                   description:item3,
                                                   price:`$${item4}`,
@@ -53,7 +55,9 @@ const Update = () => {
   return (
     <div>{isUpload? (
         <div className="input"> 
-          <div style={{height:"200px",width:"200px",backgroundColor: "rgba(188, 175, 175, 0.5)"}}><img src={image} height={200} width={200} alt='' /></div> 
+          <div style={{height:"200px",width:"200px",backgroundColor: "rgba(188, 175, 175, 0.5)"}}>
+             <video src={image} height={200} width={200} alt='' />
+             </div> 
            <h5 onChange={(e)=>name(e)}> upload Item </h5>
        Image: <input required type='file'  onChange={(e)=>name(e)} /> <br/>
        Name: <input required type='text'    onChange={(e)=>setItem2(e.target.value)} /> <br/>

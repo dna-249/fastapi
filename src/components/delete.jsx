@@ -46,12 +46,19 @@ const Delete =() => {
             {data
             .filter((item) => {return search.toLowerCase() === ""? item:item.name.toLowerCase().includes(search)})
             .map((item,index)=> <div key={index} onClick={()=>setShow(()=>false)}>
+            
                <div onClick={()=>setSelect(item)}> {item._id}</div>
             <img src={item.image}alt="" width={300} onClick={()=>setSelect(item)} />
             </div>)}
+            
           </div>
-        ):(<div>{isUpload?(<div className="auto" >
+        ):(<div>{isUpload? (<div  className="auto" >
                 <div><img src={select.image}  height={200}  width={100} /></div>
+                {select.name === "png" ||"jpeg" && <div><img src='' alt='' /></div> ||
+                 select.name === "mp3" && <div><audio src='' alt='' /></div> ||
+                 select.name === "mp4" && <div><video src='' alt='' /></div> ||
+                 select.name === "mp4" && <div><fieldset src='' alt='' /></div> 
+                 }
                 <div>{select.id}</div>
                 <div>{select.name}</div>
                 <div>{select.price}</div>
@@ -66,6 +73,7 @@ const Delete =() => {
                   <div className='green'>you have successfully updated</div>
                   <div style={{height:"100px",width:"100px", borderRadius:"5px",backgroundColor: "rgba(113, 103, 103, 0.28)"}}>
                     <img src={select.image} height={200}  width={100} alt='' /></div> 
+                    
                     <div>Go to ...</div>
                      <div className='span'> 
                   <div className='button'><Link to="/">HOME</Link></div>

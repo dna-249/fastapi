@@ -45,7 +45,7 @@ const UpdateItem = () => {
   const handleUpdateItem = (params) => {
     setIsUpload(false)
     axios.put(`https://server-api-1d7r.vercel.app/api/users/${select._id}`,
-        {image:`https://upload-api-yzgr.onrender.com/file/${item1?.name}}`,
+        {image:`https://uploadapi-production.up.railway.app/file/${item1?.name}}`,
                                                      name:item2,
                                                      description:item3,
                                                      price:`$${item4}`,

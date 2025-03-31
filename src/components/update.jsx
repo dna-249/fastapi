@@ -56,7 +56,7 @@ const Update = () => {
     <div>{isUpload? (
         <div className="input"> 
           <div style={{height:"200px",width:"200px",backgroundColor: "rgba(188, 175, 175, 0.5)"}}>
-             <video src={image} height={200} width={200} alt='' />
+             <img src={image} height={200} width={200} alt='' />
              </div> 
            <h5 onChange={(e)=>name(e)}> upload Item </h5>
        Image: <input required type='file'  onChange={(e)=>name(e)} /> <br/>

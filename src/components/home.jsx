@@ -1,5 +1,5 @@
-import {useState, React} from 'react'
-import Item from './item'
+import {useState, React, lazy} from 'react'
+const Item =lazy(()=>import('./item'))
 
 
 const Home = ({data})=>{

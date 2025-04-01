@@ -2,8 +2,8 @@ import React, { lazy, useEffect, useState } from 'react'
 import './App.css'
 const Home =lazy(()=>import("./components/home"))
 const axios =lazy(()=>import("axios"))
-const Head =lazy(()=>import('./components/header'))
-const Sear =lazy(()=>import('./components/search'))
+const Header =lazy(()=>import('./components/header'))
+const Search =lazy(()=>import('./components/search'))
 const Update =lazy(()=>import('./components/update'))
 const {Route,Routes} =lazy(()=>import("react-router-dom"))
 const Menu =lazy(()=>import('./components/menu'))

@@ -1,5 +1,5 @@
 import React, { lazy, useState } from 'react'
-const Item = lazy(()=>import('./item'))
+import Item from './item'
 
 const Search=({data})=> {
     const [search,setSearch] = useState('')

@@ -56,7 +56,7 @@ const Update = () => {
     <div>{isUpload? (
         <div className="input"> 
           <div style={{height:"200px",width:"200px",backgroundColor: "rgba(188, 175, 175, 0.5)"}}>
-             <img src={image} height={200} width={200} alt='' />
+             <img src={image} height={200} width={200} alt='' loading="lazy" />
              </div> 
            <h5 onChange={(e)=>name(e)}> upload Item </h5>
        Image: <input required type='file'  onChange={(e)=>name(e)} /> <br/>
@@ -74,7 +74,7 @@ const Update = () => {
         <div className='auto success'>
           <div className='green'>you have successfully updated</div>
           <div style={{height:"100px",width:"100px", borderRadius:"5px",backgroundColor: "rgba(113, 103, 103, 0.28)"}}>
-            <img src={image} height={200}  width={100} alt='' /></div> 
+            <img src={image} height={200}  width={100} alt='' loading='lazy' /></div> 
             <div>Go to ...</div>
              <div className='span'> 
           <div className='button'><Link to="/">HOME</Link></div>
@@ -82,14 +82,14 @@ const Update = () => {
         </div>):isError?(
                          <div className='auto upload'> 
                                <div className='auto'><h4>Please wait while Updating... </h4>
-                                <img className='animation' src={"/loading.png"} width={50} height={50}/>
+                                <img className='animation' src={"/loading.png"} width={50} height={50} loading='lazy'/>
                               </div>
                         </div>):(
                         
                             <div className='auto success'>
                           <div className='green'>Network out of coverage not uploaded</div>
                           <div style={{height:"100px",width:"100px", borderRadius:"5px",backgroundColor: "rgba(113, 103, 103, 0.28)"}}>
-                            <img src={image} height={200}  width={100} alt='' /></div> 
+                            <img src={image} height={200}  width={100} alt='' loading='lazy' /></div> 
                             <div>Go to ...</div>
                              <div className='span'> 
                           <div className='button'><Link to="/">HOME</Link></div>

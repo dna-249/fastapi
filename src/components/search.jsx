@@ -18,7 +18,7 @@ const Search=({data})=> {
             .map((item,index)=> <div  key={index} onClick={()=>setShow(()=>false)}>
                 {item._id}
                 <div onClick={()=>setSelect(item)} >
-            <img src={item.image} alt="" width={200} height={250}  /></div>
+            <img src={item.image} alt="" width={200} height={250} loading='lazy'  /></div>
             </div>)}
           </div>
         ):(<div className="auto" ><Item data={select}  /></div> )}

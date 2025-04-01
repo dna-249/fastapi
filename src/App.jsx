@@ -1,11 +1,11 @@
 import React, { lazy, useEffect, useState } from 'react'
 import './App.css'
+import {Route,Routes} from "react-router-dom"
 const Home =lazy(()=>import("./components/home"))
 const axios =lazy(()=>import("axios"))
 const Header =lazy(()=>import('./components/header'))
 const Search =lazy(()=>import('./components/search'))
 const Update =lazy(()=>import('./components/update'))
-const {Route,Routes} =lazy(()=>import("react-router-dom"))
 const Menu =lazy(()=>import('./components/menu'))
 const Delete =lazy(()=>import('./components/delete'))
 const UpdateItem =lazy(()=>import('./components/updateitem'))

@@ -1,8 +1,8 @@
 import React, { lazy, useEffect, useState } from 'react'
 import './App.css'
 import {Route,Routes} from "react-router-dom"
+import axios from "axios"
 const Home =lazy(()=>import("./components/home"))
-const axios =lazy(()=>import("axios"))
 const Header =lazy(()=>import('./components/header'))
 const Search =lazy(()=>import('./components/search'))
 const Update =lazy(()=>import('./components/update'))

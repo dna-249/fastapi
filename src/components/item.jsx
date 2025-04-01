@@ -1,5 +1,5 @@
-import React from 'react'
-import Order from './order'
+import React, { lazy } from 'react'
+const Order = lazy(()=>import('./order'))
 import { useState } from 'react'
 
 const Item = ({data}) => {

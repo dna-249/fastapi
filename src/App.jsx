@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { lazy, useEffect, useState } from 'react'
 import './App.css'
-import Home from "./components/home"
-import axios from "axios"
-import Header from './components/header'
-import Search from './components/search'
-import Update from './components/update'
-import {Route,Routes} from "react-router-dom"
-import Menu from './components/menu'
-import Delete from './components/delete'
-import UpdateItem from './components/updateitem'
+const Home =lazy(()=>import("./components/home"))
+const axios =lazy(()=>import("axios"))
+const Head =lazy(()=>import('./components/header'))
+const Sear =lazy(()=>import('./components/search'))
+const Update =lazy(()=>import('./components/update'))
+const {Route,Routes} =lazy(()=>import("react-router-dom"))
+const Menu =lazy(()=>import('./components/menu'))
+const Delete =lazy(()=>import('./components/delete'))
+const UpdateItem =lazy(()=>import('./components/updateitem'))
 
 const App = () => {
   const [data,setData] = useState([''])
